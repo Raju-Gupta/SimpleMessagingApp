@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
 
@@ -22,6 +23,17 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onClickSignIn(_ sender: UIButton) {
+        Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { (auth, error) in
+            
+            if error != nil{
+                self.defaultAlert(title: "Login Failed", message: error!.localizedDescription)
+            }
+            else{
+                UserDefaultManager.userDefaultDataSet(isLogin: true, uid: auth!.user.uid, email: self.txtEmail.text!)
+                let vc = self.storyboard?.instantiateViewController(identifier: "RootTabBarController") as! RootTabBarController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 

@@ -18,6 +18,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if UserDefaults.standard.bool(forKey: "isLogin")
+        {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let VC = mainStoryboard.instantiateViewController(withIdentifier: "RootTabBarController") as! RootTabBarController
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window!.windowScene = windowScene
+            let navigationController = UINavigationController(rootViewController: VC)
+            navigationController.isNavigationBarHidden = true
+            window!.rootViewController = navigationController
+            window!.makeKeyAndVisible()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window = window
+        }
+        else
+        {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let VC = mainStoryboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+            window!.windowScene = windowScene
+            let navController = UINavigationController(rootViewController: VC)
+            navController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navController.navigationBar.shadowImage = UIImage()
+            navController.navigationBar.isTranslucent = true
+            window!.rootViewController = navController
+            window!.makeKeyAndVisible()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window = window
+            
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

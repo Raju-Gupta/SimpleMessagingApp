@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dmm-2t-Ysa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wJk-4M-7fn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -451,6 +451,57 @@
             </objects>
             <point key="canvasLocation" x="2248" y="113"/>
         </scene>
+        <!--Chat-->
+        <scene sceneID="bTy-ef-Nie">
+            <objects>
+                <viewController id="Af5-3V-Xsu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aqQ-Qy-QKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5RW-63-opu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="Pqc-7E-hE4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3oR-mz-JlR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="2456"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="gLz-5Q-Gnl">
+            <objects>
+                <viewController id="3SM-tC-A4m" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p8s-n3-EeJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="R0Z-fJ-fOR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="nSu-6s-LWv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnL-oj-Dg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629" y="2456"/>
+        </scene>
+        <!--Root Tab Bar Controller-->
+        <scene sceneID="9BF-ma-Nu4">
+            <objects>
+                <tabBarController storyboardIdentifier="RootTabBarController" id="wJk-4M-7fn" customClass="RootTabBarController" customModule="SimpleMessagingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wp0-5H-nyE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="PrimaryColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KaE-bJ-D88" kind="relationship" relationship="viewControllers" id="VAE-fT-BQT"/>
+                        <segue destination="S7d-0a-sna" kind="relationship" relationship="viewControllers" id="LSk-zD-yzs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zkv-SO-jts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="960"/>
+        </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="1fq-mF-bbq">
             <objects>
@@ -469,10 +520,62 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UbA-Rt-zo5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KaE-bJ-D88" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="message" catalog="system" selectedImage="message.fill" id="dOj-oi-60Y">
+                        <color key="badgeColor" name="PrimaryColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1AW-vj-YGr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Af5-3V-Xsu" kind="relationship" relationship="rootViewController" id="iSM-SP-QTk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lj7-Ud-gPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686.95652173913049" y="1756.4732142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Jr-wi-QJ4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S7d-0a-sna" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="bAr-FK-ZxP">
+                        <color key="badgeColor" name="PrimaryColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z7Z-Uh-3RR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3SM-tC-A4m" kind="relationship" relationship="rootViewController" id="Fq7-Vk-N9E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Vj-g2-Dav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="1756"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="logo" width="512" height="512"/>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="PrimaryColor">
             <color red="0.5820000171661377" green="0.21600000560283661" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
