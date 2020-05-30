@@ -23,10 +23,10 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onClickSignIn(_ sender: UIButton) {
-        Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { (auth, error) in
+        Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (auth, error) in
             
             if error != nil{
-                self.defaultAlert(title: "Login Failed", message: error!.localizedDescription)
+                self.defaultAlert(title: "Sign In Failed", message: error!.localizedDescription)
             }
             else{
                 UserDefaultManager.userDefaultDataSet(isLogin: true, uid: auth!.user.uid, email: self.txtEmail.text!)

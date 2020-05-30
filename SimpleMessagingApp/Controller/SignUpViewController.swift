@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
@@ -27,6 +28,19 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onClickSignUp(_ sender: UIButton) {
+        Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { (auth, error) in
+            
+            if error != nil{
+                self.defaultAlert(title: "Sign Up Failed", message: error!.localizedDescription)
+            }
+            else{
+                UserDefaultManager.userDefaultDataSet(isLogin: true, uid: auth!.user.uid, email: self.txtEmail.text!)
+                let userData = UserDataModel(Uname: self.txtName.text!, Uemail: self.txtEmail.text!, Uavatar: "", UuserId: auth!.user.uid)
+                UserDataManager.setUserData(userData: userData, userId: auth!.user.uid)
+                let vc = self.storyboard?.instantiateViewController(identifier: "RootTabBarController") as! RootTabBarController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 

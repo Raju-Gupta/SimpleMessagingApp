@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class UserDataManager{
     
-    static func setUserData(){
-        
+    static let databaseRef = Database.database().reference()
+    
+    static func setUserData(userData : UserDataModel, userId : String){
+        let ref = databaseRef.child("User").child(userId)
+        ref.setValue(userData.toDictionary())
     }
 }
