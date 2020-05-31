@@ -505,14 +505,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8ZJ-UI-Ny6">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ZJ-UI-Ny6">
                                                     <rect key="frame" x="15" y="5" width="384" height="50"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNM-nx-4G6" customClass="DesignableView" customModule="SimpleMessagingApp" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="204.5" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
                                                             <subviews>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Hello " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTx-n7-cx6">
-                                                                    <rect key="frame" x="5" y="1" width="199.5" height="48"/>
+                                                                    <rect key="frame" x="5" y="1" width="374" height="48"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="rfo-mq-3fp"/>
@@ -532,7 +532,7 @@
                                                             </subviews>
                                                             <color key="backgroundColor" name="PrimaryColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="MTx-n7-cx6" secondAttribute="trailing" id="3FC-KE-6BF"/>
+                                                                <constraint firstAttribute="trailing" secondItem="MTx-n7-cx6" secondAttribute="trailing" constant="5" id="3FC-KE-6BF"/>
                                                                 <constraint firstItem="MTx-n7-cx6" firstAttribute="leading" secondItem="jNM-nx-4G6" secondAttribute="leading" constant="5" id="FUc-aG-Bdy"/>
                                                                 <constraint firstAttribute="bottom" secondItem="MTx-n7-cx6" secondAttribute="bottom" constant="1" id="H1N-sL-2b3"/>
                                                                 <constraint firstItem="MTx-n7-cx6" firstAttribute="top" secondItem="jNM-nx-4G6" secondAttribute="top" constant="1" id="ijZ-iS-IDp"/>
