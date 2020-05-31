@@ -51,6 +51,7 @@
 		2C65851724821DB300CA6283 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C65850624821DB300CA6283 /* IQNSArray+Sort.swift */; };
 		2C65851A248224FE00CA6283 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C658519248224FE00CA6283 /* RootTabBarController.swift */; };
 		2C65851C2482268B00CA6283 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C65851B2482268B00CA6283 /* GoogleService-Info.plist */; };
+		2CD3C1FF2483F56A00B712B1 /* MessageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3C1FE2483F56A00B712B1 /* MessageDataManager.swift */; };
 		2CDB2BC824828FF700266DA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BC724828FF700266DA4 /* Extension.swift */; };
 		2CDB2BCB2482925200266DA4 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BCA2482925200266DA4 /* UserDataModel.swift */; };
 		2CDB2BCD248293DC00266DA4 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BCC248293DC00266DA4 /* UserDataManager.swift */; };
@@ -107,6 +108,7 @@
 		2C65850624821DB300CA6283 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		2C658519248224FE00CA6283 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		2C65851B2482268B00CA6283 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CD3C1FE2483F56A00B712B1 /* MessageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataManager.swift; sourceTree = "<group>"; };
 		2CDB2BC724828FF700266DA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2CDB2BCA2482925200266DA4 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		2CDB2BCC248293DC00266DA4 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2C5CBE4424838266009E1C78 /* MessageDataModel.swift */,
+				2CD3C1FE2483F56A00B712B1 /* MessageDataManager.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				2C65851424821DB300CA6283 /* IQUIViewController+Additions.swift in Sources */,
 				2C65850F24821DB300CA6283 /* IQKeyboardManagerConstants.swift in Sources */,
 				2C65851324821DB300CA6283 /* IQUIScrollView+Additions.swift in Sources */,
+				2CD3C1FF2483F56A00B712B1 /* MessageDataManager.swift in Sources */,
 				2C6584DD248213DC00CA6283 /* DesignableTextView.swift in Sources */,
 				2C65850924821DB300CA6283 /* IQTitleBarButtonItem.swift in Sources */,
 				2C6584E52482199700CA6283 /* ResetPasswordViewController.swift in Sources */,

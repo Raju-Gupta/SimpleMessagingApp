@@ -459,7 +459,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TIq-CX-vyM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TIq-CX-vyM">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
@@ -477,7 +477,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5RW-63-opu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="Pqc-7E-hE4"/>
+                    <navigationItem key="navigationItem" title="Chat" id="Pqc-7E-hE4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="cFZ-td-X38">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oJg-0s-OOo">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <connections>
+                                <segue destination="Grq-5g-bZB" kind="show" id="UVb-1r-gHj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chatTableView" destination="TIq-CX-vyM" id="A0m-KM-h3S"/>
                     </connections>
@@ -486,7 +497,7 @@
             </objects>
             <point key="canvasLocation" x="652" y="1756"/>
         </scene>
-        <!--Messages-->
+        <!--User-->
         <scene sceneID="ehc-SQ-o0T">
             <objects>
                 <viewController storyboardIdentifier="ChattingViewController" id="Grq-5g-bZB" customClass="ChattingViewController" customModule="SimpleMessagingApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -495,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WUr-tQ-cle">
-                                <rect key="frame" x="0.0" y="44" width="414" height="763"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="60" id="5X8-TE-YRz" customClass="MessageCell" customModule="SimpleMessagingApp" customModuleProvider="target">
@@ -566,9 +577,9 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej7-qO-GBR">
-                                <rect key="frame" x="0.0" y="807" width="414" height="55"/>
+                                <rect key="frame" x="0.0" y="758" width="414" height="55"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message type here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84t-wA-yGb" customClass="DesignableTextField" customModule="SimpleMessagingApp" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84t-wA-yGb" customClass="DesignableTextField" customModule="SimpleMessagingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -580,16 +591,16 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" name="PrimaryColor"/>
+                                                <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="LeftPadding">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-fD-E6f" customClass="DesignableButton" customModule="SimpleMessagingApp" customModuleProvider="target">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rg2-fD-E6f" customClass="DesignableButton" customModule="SimpleMessagingApp" customModuleProvider="target">
                                         <rect key="frame" x="314" y="0.0" width="100" height="55"/>
-                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="elo-eO-4gf"/>
                                         </constraints>
@@ -619,7 +630,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zOf-rc-kol"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="4Um-Pe-6fg">
+                    <navigationItem key="navigationItem" title="User" id="4Um-Pe-6fg">
                         <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="AlY-is-LzP">
                             <color key="tintColor" name="PrimaryColor"/>
                             <connections>

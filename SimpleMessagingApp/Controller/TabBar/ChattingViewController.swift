@@ -10,35 +10,34 @@ import UIKit
 import FirebaseDatabase
 
 class ChattingViewController: UIViewController {
-
+    
     @IBOutlet weak var messageTableView: UITableView!
     @IBOutlet weak var txtMessage: DesignableTextField!
     @IBOutlet weak var btnSend: DesignableButton!
+    
     var allmessages = [MessageDataModel]()
     var recieverUser : UserDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldValidation()
         self.title = recieverUser?.name
         getAllMessages()
     }
     
     func getAllMessages(){
-        Database.database().reference(withPath: "Messages").child(getThreadName()).observe(.value) { (dataSnapShot) in
-            self.allmessages.removeAll()
-            if let snapShot = dataSnapShot.children.allObjects as? [DataSnapshot]{
-                for snap in snapShot{
-                    let snapdata = snap.value as! NSDictionary
-                    let message = snapdata["message"] as? String
-                    let recieverId = snapdata["recieverId"] as? String
-                    let senderId = snapdata["senderId"] as? String
-                    self.allmessages.append(MessageDataModel(message: message!, recieverId: recieverId!, senderId: senderId!))
-                    self.messageTableView.reloadData()
-                }
+        MessageDataManager.getAllMessages(thread: getThreadName()) { (messages) in
+            self.allmessages = messages
+            self.messageTableView.reloadData()
+            if self.allmessages.count != 0{
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1, execute: {
+                    let indexPath = IndexPath(row: self.allmessages.count-1, section: 0)
+                    self.messageTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+                })
             }
         }
     }
-    
+
     func getThreadName() -> String{
         var thread = ""
         if recieverUser!.userId < UserDefaultManager.userId{
@@ -55,12 +54,9 @@ class ChattingViewController: UIViewController {
     }
     
     @IBAction func onClickSend(_ sender: Any) {
-        if txtMessage.text?.count != 0{
-            let ref = Database.database().reference(withPath: "Messages").child(getThreadName()).childByAutoId()
-            let messageData = ["message":txtMessage.text!, "recieverId":recieverUser!.userId, "senderId":UserDefaultManager.userId] as [String : String]
-            ref.setValue(messageData)
-            txtMessage.text = ""
-        }
+        let messageData = MessageDataModel(msg: txtMessage.text!, rvrId: recieverUser!.userId, sndrId: UserDefaultManager.userId)
+        MessageDataManager.setMessage(thread: getThreadName(), messageData: messageData)
+        txtMessage.text = ""
     }
 }
 
@@ -81,6 +77,22 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource{
         cell.txtMessage.text = allmessages[indexPath.row].message
         return cell
     }
+}
+
+extension ChattingViewController{
+    func textFieldValidation(){
+        btnSend.isEnabled = false
+        txtMessage.addTarget(self, action: #selector(textDidChange(_sender:)), for: .editingChanged)
+    }
     
-    
+    @objc func textDidChange(_sender:UITextField){
+        if txtMessage.text?.count == 0 && txtMessage.text == ""{
+            btnSend.alpha = 0.5
+            btnSend.isEnabled = false
+        }
+        else{
+            btnSend.alpha = 1
+            btnSend.isEnabled = true
+        }
+    }
 }

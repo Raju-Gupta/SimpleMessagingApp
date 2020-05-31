@@ -31,6 +31,7 @@ class ChatUserViewController: UIViewController {
     
     //MARK:- Get All Users
     func getAllUser(){
+        allUsers.removeAll()
         UserDataManager.getAllUsers { (allUser) in
             self.allUsers = allUser
             self.chatTableView.reloadData()
