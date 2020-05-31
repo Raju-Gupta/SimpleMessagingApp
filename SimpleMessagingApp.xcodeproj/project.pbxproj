@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		22D039A90DB94D4ECF5590C8 /* Pods_SimpleMessagingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB56D83FC34C8B9B1092866 /* Pods_SimpleMessagingApp.framework */; };
+		2C5CBE3924835E4F009E1C78 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5CBE3724835E4F009E1C78 /* UserCell.swift */; };
+		2C5CBE3A24835E4F009E1C78 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C5CBE3824835E4F009E1C78 /* UserCell.xib */; };
+		2C5CBE3C248365F9009E1C78 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5CBE3B248365F9009E1C78 /* ChattingViewController.swift */; };
+		2C5CBE4224837431009E1C78 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5CBE4124837431009E1C78 /* MessageCell.swift */; };
 		2C6584BB2482124C00CA6283 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6584BA2482124C00CA6283 /* AppDelegate.swift */; };
 		2C6584BD2482124C00CA6283 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6584BC2482124C00CA6283 /* SceneDelegate.swift */; };
 		2C6584BF2482124C00CA6283 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6584BE2482124C00CA6283 /* SignUpViewController.swift */; };
@@ -49,9 +53,17 @@
 		2CDB2BC824828FF700266DA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BC724828FF700266DA4 /* Extension.swift */; };
 		2CDB2BCB2482925200266DA4 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BCA2482925200266DA4 /* UserDataModel.swift */; };
 		2CDB2BCD248293DC00266DA4 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BCC248293DC00266DA4 /* UserDataManager.swift */; };
+		2CDB2BCF24829DA100266DA4 /* ChatUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BCE24829DA100266DA4 /* ChatUserViewController.swift */; };
+		2CDB2BD124829DE500266DA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BD024829DE500266DA4 /* ProfileViewController.swift */; };
+		2CDB2BD324829E4A00266DA4 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BD224829E4A00266DA4 /* UpdateProfileViewController.swift */; };
+		2CDB2BD52482A06E00266DA4 /* DataConvertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB2BD42482A06E00266DA4 /* DataConvertion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C5CBE3724835E4F009E1C78 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		2C5CBE3824835E4F009E1C78 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		2C5CBE3B248365F9009E1C78 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		2C5CBE4124837431009E1C78 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		2C6584B72482124C00CA6283 /* SimpleMessagingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMessagingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6584BA2482124C00CA6283 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6584BC2482124C00CA6283 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +108,10 @@
 		2CDB2BC724828FF700266DA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2CDB2BCA2482925200266DA4 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		2CDB2BCC248293DC00266DA4 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		2CDB2BCE24829DA100266DA4 /* ChatUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserViewController.swift; sourceTree = "<group>"; };
+		2CDB2BD024829DE500266DA4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2CDB2BD224829E4A00266DA4 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		2CDB2BD42482A06E00266DA4 /* DataConvertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConvertion.swift; sourceTree = "<group>"; };
 		6D33B37D84A7856902089895 /* Pods-SimpleMessagingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMessagingApp.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMessagingApp/Pods-SimpleMessagingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DCB56D83FC34C8B9B1092866 /* Pods_SimpleMessagingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMessagingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B648C43931B2ABE2604273 /* Pods-SimpleMessagingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMessagingApp.release.xcconfig"; path = "Target Support Files/Pods-SimpleMessagingApp/Pods-SimpleMessagingApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +129,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C5CBE3624835E2E009E1C78 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C5CBE3724835E4F009E1C78 /* UserCell.swift */,
+				2C5CBE3824835E4F009E1C78 /* UserCell.xib */,
+				2C5CBE4124837431009E1C78 /* MessageCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2C6584AE2482124C00CA6283 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +179,7 @@
 		2C6584CE2482126900CA6283 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2CDB2BD42482A06E00266DA4 /* DataConvertion.swift */,
 				2C6584EC24821D7C00CA6283 /* TextFieldHelper.swift */,
 				2C6584EA24821D7600CA6283 /* UserDefaultManager.swift */,
 				2C6584E824821D6900CA6283 /* RegExManager.swift */,
@@ -177,6 +204,7 @@
 		2C6584D02482128000CA6283 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C5CBE3624835E2E009E1C78 /* Cell */,
 				2C6584D2248213B800CA6283 /* Resources */,
 			);
 			path = View;
@@ -288,6 +316,10 @@
 			isa = PBXGroup;
 			children = (
 				2C658519248224FE00CA6283 /* RootTabBarController.swift */,
+				2CDB2BCE24829DA100266DA4 /* ChatUserViewController.swift */,
+				2C5CBE3B248365F9009E1C78 /* ChattingViewController.swift */,
+				2CDB2BD024829DE500266DA4 /* ProfileViewController.swift */,
+				2CDB2BD224829E4A00266DA4 /* UpdateProfileViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -380,6 +412,7 @@
 			files = (
 				2C6584C72482124E00CA6283 /* LaunchScreen.storyboard in Resources */,
 				2C6584C42482124E00CA6283 /* Assets.xcassets in Resources */,
+				2C5CBE3A24835E4F009E1C78 /* UserCell.xib in Resources */,
 				2C65851C2482268B00CA6283 /* GoogleService-Info.plist in Resources */,
 				2C65851024821DB300CA6283 /* IQKeyboardManagerSwift.xcassets in Resources */,
 				2C6584C22482124C00CA6283 /* Main.storyboard in Resources */,
@@ -435,7 +468,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDB2BD324829E4A00266DA4 /* UpdateProfileViewController.swift in Sources */,
 				2C65851124821DB300CA6283 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				2C5CBE4224837431009E1C78 /* MessageCell.swift in Sources */,
 				2C6584E32482196F00CA6283 /* SignInViewController.swift in Sources */,
 				2CDB2BCB2482925200266DA4 /* UserDataModel.swift in Sources */,
 				2C6584DA248213DC00CA6283 /* DesignableLetterSpacing.swift in Sources */,
@@ -458,14 +493,19 @@
 				2CDB2BCD248293DC00266DA4 /* UserDataManager.swift in Sources */,
 				2C65851624821DB300CA6283 /* IQUIView+Hierarchy.swift in Sources */,
 				2C6584BB2482124C00CA6283 /* AppDelegate.swift in Sources */,
+				2CDB2BD52482A06E00266DA4 /* DataConvertion.swift in Sources */,
 				2C6584ED24821D7C00CA6283 /* TextFieldHelper.swift in Sources */,
 				2C65851524821DB300CA6283 /* IQUITextFieldView+Additions.swift in Sources */,
 				2C6584EB24821D7600CA6283 /* UserDefaultManager.swift in Sources */,
 				2C6584E724821D6100CA6283 /* ErrorMessages.swift in Sources */,
 				2C65850A24821DB300CA6283 /* IQBarButtonItem.swift in Sources */,
+				2CDB2BD124829DE500266DA4 /* ProfileViewController.swift in Sources */,
 				2C6584E12482140D00CA6283 /* CustomNavigationController.swift in Sources */,
+				2C5CBE3924835E4F009E1C78 /* UserCell.swift in Sources */,
+				2CDB2BCF24829DA100266DA4 /* ChatUserViewController.swift in Sources */,
 				2CDB2BC824828FF700266DA4 /* Extension.swift in Sources */,
 				2C65850D24821DB300CA6283 /* IQInvocation.swift in Sources */,
+				2C5CBE3C248365F9009E1C78 /* ChattingViewController.swift in Sources */,
 				2C65850824821DB300CA6283 /* IQPreviousNextView.swift in Sources */,
 				2C65851724821DB300CA6283 /* IQNSArray+Sort.swift in Sources */,
 				2C6584BD2482124C00CA6283 /* SceneDelegate.swift in Sources */,
