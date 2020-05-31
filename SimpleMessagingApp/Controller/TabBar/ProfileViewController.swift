@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHProgressHUD
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
@@ -16,6 +17,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        IHProgressHUD.set(defaultStyle: .dark)
     }
     override func viewWillAppear(_ animated: Bool) {
         userDataSetUp()
@@ -33,7 +35,7 @@ class ProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Log Out", message: "Are you sure?, you want logout.", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let yes = UIAlertAction(title: "Yes", style: .default) { (yesAction) in
-            
+            IHProgressHUD.show()
             UserDefaultManager.removeAll()
             try! Auth.auth().signOut()
             
@@ -44,6 +46,7 @@ class ProfileViewController: UIViewController {
             navVc.navigationBar.isTranslucent = true
             let appDel = UIApplication.shared.delegate as? AppDelegate
             appDel?.window?.rootViewController = navVc
+            IHProgressHUD.dismiss()
         }
         alert.addAction(cancel)
         alert.addAction(yes)
@@ -55,13 +58,14 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController{
     
     func userDataSetUp(){
-        
+        IHProgressHUD.show()
         UserDataManager.getUserData(userId: UserDefaultManager.userId) { (userData) in
             let avatarStr = userData.avatar
             if avatarStr != ""{
                 self.imgAvatar.image = DataConvertion.convertBase64StringToImage(imageBase64String: avatarStr)
             }
             self.lblName.text = userData.name
+            IHProgressHUD.dismiss()
         }
     }
 }

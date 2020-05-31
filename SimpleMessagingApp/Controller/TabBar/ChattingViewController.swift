@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHProgressHUD
 import FirebaseDatabase
 
 class ChattingViewController: UIViewController {
@@ -23,12 +24,16 @@ class ChattingViewController: UIViewController {
         textFieldValidation()
         self.title = recieverUser?.name
         getAllMessages()
+        IHProgressHUD.set(defaultStyle: .dark)
+        
     }
     
     func getAllMessages(){
+        IHProgressHUD.show()
         MessageDataManager.getAllMessages(thread: getThreadName()) { (messages) in
             self.allmessages = messages
             self.messageTableView.reloadData()
+            IHProgressHUD.dismiss()
             if self.allmessages.count != 0{
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1, execute: {
                     let indexPath = IndexPath(row: self.allmessages.count-1, section: 0)

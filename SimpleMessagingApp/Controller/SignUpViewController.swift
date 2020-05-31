@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHProgressHUD
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
@@ -21,6 +22,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldValidation()
+        IHProgressHUD.set(defaultStyle: .dark)
     }
 
     @IBAction func onClickBack(_ sender: Any) {
@@ -28,9 +30,11 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func onClickSignUp(_ sender: UIButton) {
+        IHProgressHUD.show()
         Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { (auth, error) in
             
             if error != nil{
+                IHProgressHUD.dismiss()
                 self.defaultAlert(title: "Sign Up Failed", message: error!.localizedDescription)
             }
             else{
@@ -39,6 +43,7 @@ class SignUpViewController: UIViewController {
                 UserDataManager.setUserData(userData: userData, userId: auth!.user.uid)
                 let vc = self.storyboard?.instantiateViewController(identifier: "RootTabBarController") as! RootTabBarController
                 self.navigationController?.pushViewController(vc, animated: true)
+                IHProgressHUD.dismiss()
             }
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHProgressHUD
 import FirebaseAuth
 
 class ResetPasswordViewController: UIViewController {
@@ -19,6 +20,7 @@ class ResetPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldValidation()
+        IHProgressHUD.set(defaultStyle: .dark)
     }
     
     @IBAction func onClickBack(_ sender: Any) {
@@ -26,11 +28,14 @@ class ResetPasswordViewController: UIViewController {
     }
     
     @IBAction func onClickReset(_ sender: UIButton) {
+        IHProgressHUD.show()
         Auth.auth().sendPasswordReset(withEmail: txtEmail.text!) { (error) in
             if error != nil{
+                IHProgressHUD.dismiss()
                 self.defaultAlert(title: "Failed To Reset", message: error!.localizedDescription)
             }
             else{
+                IHProgressHUD.dismiss()
                 self.defaultAlert(title: "Reset Link send successfully", message: "We have just send you a password reset email. Please check your inbox and follow the instructions to reset you password.")
             }
         }

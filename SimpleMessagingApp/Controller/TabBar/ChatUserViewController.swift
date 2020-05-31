@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHProgressHUD
 import FirebaseDatabase
 
 class ChatUserViewController: UIViewController {
@@ -18,6 +19,7 @@ class ChatUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cellRegistation()
+        IHProgressHUD.set(defaultStyle: .dark)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,9 +34,11 @@ class ChatUserViewController: UIViewController {
     //MARK:- Get All Users
     func getAllUser(){
         allUsers.removeAll()
+        IHProgressHUD.show()
         UserDataManager.getAllUsers { (allUser) in
             self.allUsers = allUser
             self.chatTableView.reloadData()
+            IHProgressHUD.dismiss()
         }
     }
 
