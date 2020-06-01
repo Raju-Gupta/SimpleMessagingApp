@@ -34,8 +34,8 @@ class UserDataManager{
     
     static func getAllUsers(completion:@escaping([UserDataModel])->Void){
         var allUserData = [UserDataModel]()
-        allUserData.removeAll()
         databaseRef.child("User").observe(.value) { (dataSnapShot) in
+            allUserData.removeAll()
             for snap in dataSnapShot.children{
                 let userSnap = snap as! DataSnapshot
                 //let uid = userSnap.key

@@ -20,9 +20,6 @@ class ChatUserViewController: UIViewController {
         super.viewDidLoad()
         cellRegistation()
         IHProgressHUD.set(defaultStyle: .dark)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         getAllUser()
     }
     
@@ -33,9 +30,9 @@ class ChatUserViewController: UIViewController {
     
     //MARK:- Get All Users
     func getAllUser(){
-        allUsers.removeAll()
         IHProgressHUD.show()
         UserDataManager.getAllUsers { (allUser) in
+            self.allUsers.removeAll()
             self.allUsers = allUser
             self.chatTableView.reloadData()
             IHProgressHUD.dismiss()
